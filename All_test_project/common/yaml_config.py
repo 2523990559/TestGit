@@ -13,11 +13,12 @@
 #   print(i)
 
 import yaml
+from tool import  get_project_path,sep
 
 class GetConf:
     def __init__(self):
         #with open的第一个参数填写environment.yaml的绝对路径
-        with open("D:\TestGit\All_test_project\config\environment.yaml", "r",encoding="utf-8") as env_file:
+        with open(get_project_path()+sep(['config','environment.yaml'],add_sep_before=True), "r",encoding="utf-8") as env_file:
             self.env = yaml.load(env_file, Loader=yaml.FullLoader)
             #print(self.env)
 
